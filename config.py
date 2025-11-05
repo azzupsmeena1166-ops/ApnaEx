@@ -3,26 +3,26 @@ from os import getenv
 
 
 # ------------------------------------------------
-API_ID = int(os.environ.get("API_ID", "22694914"))
+API_ID = int(os.environ.get("API_ID", "33490515"))
 # ------------------------------------------------
-API_HASH = os.environ.get("API_HASH","4fd02c02368941a03d48ecab3a3b4a31")
+API_HASH = os.environ.get("API_HASH","378e1c46ebe4f29292a91260866df8a4")
 # ------------------------------------------------
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 # ------------------------------------------------
-BOT_USERNAME = os.environ.get("BOT_USERNAME", "@Cpuplod1erbot")
+BOT_USERNAME = os.environ.get("BOT_USERNAME", "@CV121extractbot")
 BOT_TEXT = "GAJJU BHAI KA EXTRACTOR"
 # ------------------------------------------------
-OWNER_ID = int(os.environ.get("OWNER_ID", "7491374623"))
+OWNER_ID = int(os.environ.get("OWNER_ID", "732392395"))
 # ------------------------------------------------
 # //LOG CHANNEL ID 
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002784599161"))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1003241105977"))
 
 # //FORCE_CHANNEL_ID
-CHANNEL_ID2 = int(os.environ.get("CHANNEL_ID2", "-1002784599161")) 
+CHANNEL_ID2 = int(os.environ.get("CHANNEL_ID2", "-1003241105977")) 
 # ------------------------------------------------
 MONGO_URL = os.environ.get("MONGO_URL", "")
 # -----------------------------------------------
-PREMIUM_LOGS = int(os.environ.get("PREMIUM_LOGS", "-1002784599161"))
+PREMIUM_LOGS = int(os.environ.get("PREMIUM_LOGS", "-1003241105977"))
 # -----------------------------------------------
 join = '<a href="https://t.me/RPSC_UPSC_CURRENT">✳️ JOIN BACKUP</a>'
 # -----------------------------------------------
