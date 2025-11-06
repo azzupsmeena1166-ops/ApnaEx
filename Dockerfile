@@ -1,22 +1,21 @@
-# Use official Python 3.10.11 image
-FROM python:3.10.11-slim
+FROM ubuntu:latest
 
-# Set work directory
+# Install dependencies
+RUN apt-get update -y && apt-get upgrade -y && \
+    apt-get install -y --no-install-recommends \
+    python3 python3-pip python3-venv gcc libffi-dev musl-dev ffmpeg aria2 && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Set working directory
 WORKDIR /app
+COPY . /app/
 
-# Install system dependencies (if needed, can be removed if not using any OS deps)
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    && rm -rf /var/lib/apt/lists/*
+# Create and activate a virtual environment to bypass PEP 668 restrictions
+RUN python3 -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
 
-# Copy requirements (if you use one)
-COPY requirements.txt .
+# Install dependencies safely inside venv
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir --upgrade -r Installer
 
-# Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy your code
-COPY . .
-
-# Run the Extractor module
-CMD ["sh", "-c", "python -m Extractor"]
+CMD ["python3", "main.py"]
